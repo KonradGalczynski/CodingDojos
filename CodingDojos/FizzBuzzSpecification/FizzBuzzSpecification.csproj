@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Users\kgalczynski\.nuget\packages\nsubstitute\3.1.0\lib\net46\NSubstitute.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,7 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FizzBuzzSpecification.cs" />
+    <Compile Include="DivisibleBy15RuleSpecification.cs" />
+    <Compile Include="DivisibleBy3RuleSpecification.cs" />
+    <Compile Include="DivisibleBy5RuleSpecification.cs" />
+    <Compile Include="FizzBuzzModuleSpecification.cs" />
+    <Compile Include="IntegerRuleSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

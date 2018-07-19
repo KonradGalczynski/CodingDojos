@@ -11,7 +11,11 @@ namespace CodingDojos
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("FizzBuzz main");
+            var outputBuilder = new OutputBuilder();
+            var worflow = new RuleWorkflow(FizzBuzzWorkflowFactory.Create(outputBuilder));
+            var input = int.Parse(Console.ReadLine());
+            worflow.Run(input);
+            Console.WriteLine(outputBuilder.Build());
             Console.ReadKey();
         }
     }
