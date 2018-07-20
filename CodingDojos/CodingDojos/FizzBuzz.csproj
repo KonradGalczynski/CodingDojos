@@ -42,17 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DivisibleBy15Rule.cs" />
-    <Compile Include="DivisibleBy3Rule.cs" />
-    <Compile Include="DivisibleBy5Rule.cs" />
+    <Compile Include="Rules\DivisibleBy15Rule.cs" />
+    <Compile Include="Builders\DivisibleBy15RuleBuilder.cs" />
+    <Compile Include="Rules\DivisibleBy3Rule.cs" />
+    <Compile Include="Builders\DivisibleBy3RuleBuilder.cs" />
+    <Compile Include="Rules\DivisibleBy5Rule.cs" />
+    <Compile Include="Builders\DivisibleBy5RuleBuilder.cs" />
     <Compile Include="FizzBuzzMain.cs" />
-    <Compile Include="FizzBuzzWorkflowFactory.cs" />
-    <Compile Include="IntegerRule.cs" />
+    <Compile Include="Workflow\FizzBuzzWorkflowFactory.cs" />
+    <Compile Include="Rules\IntegerRule.cs" />
+    <Compile Include="Builders\IntegerRuleBuilder.cs" />
     <Compile Include="IOutputBuilder.cs" />
-    <Compile Include="IRule.cs" />
+    <Compile Include="Rules\IRule.cs" />
+    <Compile Include="Builders\IRuleBuilder.cs" />
     <Compile Include="OutputBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RuleWorkflow.cs" />
+    <Compile Include="Rules\RuleBase.cs" />
+    <Compile Include="Builders\RuleBuilderBase.cs" />
+    <Compile Include="Workflow\RuleWorkflow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

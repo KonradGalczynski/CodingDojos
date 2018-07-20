@@ -1,4 +1,6 @@
-namespace CodingDojos
+using CodingDojos.Rules;
+
+namespace CodingDojos.Workflow
 {
     public class RuleWorkflow
     {

@@ -11,7 +11,6 @@ namespace FizzBuzzSpecification
         [InlineData(1, "1")]
         [InlineData(4, "12Fizz4")]
         [InlineData(15, "12Fizz4BuzzFizz78FizzBuzz11Fizz1314FizzBuzz")]
-    
         public void ShouldProduceExpectedOutputForGivenInput(int input, string expected)
         {
             var outputBuilder = new OutputBuilder();
@@ -21,6 +20,5 @@ namespace FizzBuzzSpecification
 
             outputBuilder.Build().Should().Be(expected);
         }
-
     }
 }

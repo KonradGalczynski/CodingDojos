@@ -12,7 +12,7 @@ namespace FizzBuzzSpecification
         {
             var input = Any.Integer();
             var outputBuilder = Substitute.For<IOutputBuilder>();
-            var rule = new IntegerRule(outputBuilder);
+            var rule = new IntegerRule(Any.Boolean(), Any.InstanceOf<IRule>(), outputBuilder);
 
             rule.Apply(input);
 
@@ -23,12 +23,13 @@ namespace FizzBuzzSpecification
         public void ShouldCallSuccessorWhenApplyIsCalledAndIsNotBreakable()
         {
             var input = Any.Integer();
-            var rule = new IntegerRule(Any.InstanceOf<IOutputBuilder>());
             var successor = Substitute.For<IRule>();
-            rule.ContinueWith(successor);
+            var outputBuilder = Substitute.For<IOutputBuilder>();
+            var rule = new IntegerRule(false, successor, outputBuilder);
 
             rule.Apply(input);
 
+            outputBuilder.Received().Append(input.ToString());
             successor.Received().Apply(input);
         }
 
@@ -36,12 +37,13 @@ namespace FizzBuzzSpecification
         public void ShouldNotCallSuccessorWhenApplyIsCalledAndIsBreakable()
         {
             var input = Any.Integer();
-            var rule = new IntegerRule(Any.InstanceOf<IOutputBuilder>());
             var successor = Substitute.For<IRule>();
-            rule.ContinueWith(successor).BreakIfApplied();
+            var outputBuilder = Substitute.For<IOutputBuilder>();
+            var rule = new IntegerRule(true, successor, outputBuilder);
 
             rule.Apply(input);
 
+            outputBuilder.Received().Append(input.ToString());
             successor.DidNotReceive().Apply(input);
         }
     }

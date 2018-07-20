@@ -12,7 +12,7 @@ namespace FizzBuzzSpecification
         {
             var input = Any.IntegerDivisibleBy(3);
             var outputBuilder = Substitute.For<IOutputBuilder>();
-            var rule = new DivisibleBy3Rule(outputBuilder);
+            var rule = new DivisibleBy3Rule(false, Any.InstanceOf<IRule>(), outputBuilder);
 
             rule.Apply(input);
 
@@ -24,7 +24,7 @@ namespace FizzBuzzSpecification
         {
             var input = Any.IntegerNotDivisibleBy(3);
             var outputBuilder = Substitute.For<IOutputBuilder>();
-            var rule = new DivisibleBy3Rule(outputBuilder);
+            var rule = new DivisibleBy3Rule(false, Any.InstanceOf<IRule>(), outputBuilder);
 
             rule.Apply(input);
 
@@ -35,12 +35,13 @@ namespace FizzBuzzSpecification
         public void ShouldCallSuccessorWhenApplyIsCalledRuleMatchesAndIsNotBreakable()
         {
             var input = Any.IntegerDivisibleBy(3);
-            var rule = new DivisibleBy3Rule(Any.InstanceOf<IOutputBuilder>());
+            var outputBuilder = Substitute.For<IOutputBuilder>();
             var successor = Substitute.For<IRule>();
-            rule.ContinueWith(successor);
+            var rule = new DivisibleBy3Rule(false, successor, outputBuilder);
 
             rule.Apply(input);
 
+            outputBuilder.Received().Append("Fizz");
             successor.Received().Apply(input);
         }
 
@@ -48,12 +49,13 @@ namespace FizzBuzzSpecification
         public void ShouldCallSuccessorWhenApplyIsCalledAndRuleDoesNotMatches()
         {
             var input = Any.IntegerNotDivisibleBy(3);
-            var rule = new DivisibleBy3Rule(Any.InstanceOf<IOutputBuilder>());
             var successor = Substitute.For<IRule>();
-            rule.ContinueWith(successor);
+            var outputBuilder = Substitute.For<IOutputBuilder>();
+            var rule = new DivisibleBy3Rule(false, successor, outputBuilder);
 
             rule.Apply(input);
 
+            outputBuilder.DidNotReceive().Append(Arg.Any<string>());
             successor.Received().Apply(input);
         }
 
@@ -61,12 +63,13 @@ namespace FizzBuzzSpecification
         public void ShouldNotCallSuccessorWhenApplyIsCalledAndIsBreakable()
         {
             var input = Any.IntegerDivisibleBy(3);
-            var rule = new DivisibleBy3Rule(Any.InstanceOf<IOutputBuilder>());
+            var outputBuilder = Substitute.For<IOutputBuilder>();
             var successor = Substitute.For<IRule>();
-            rule.ContinueWith(successor).BreakIfApplied();
+            var rule = new DivisibleBy3Rule(true, successor, outputBuilder);
 
             rule.Apply(input);
 
+            outputBuilder.Received().Append("Fizz");
             successor.DidNotReceive().Apply(input);
         }
     }

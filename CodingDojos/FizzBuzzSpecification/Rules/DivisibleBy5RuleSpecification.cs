@@ -5,26 +5,26 @@ using Xunit;
 
 namespace FizzBuzzSpecification
 {
-    public class DivisibleBy15RuleSpecification
+    public class DivisibleBy5RuleSpecification
     {
         [Fact]
-        public void ShouldProduceFizzBuzzOnOutputWhenApplyForIntegerDivisibleBy15()
+        public void ShouldProduceBuzzOnOutputWhenApplyForIntegerDivisibleBy5()
         {
-            var input = Any.IntegerDivisibleBy(15);
+            var input = Any.IntegerDivisibleBy(5);
             var outputBuilder = Substitute.For<IOutputBuilder>();
-            var rule = new DivisibleBy15Rule(outputBuilder);
+            var rule = new DivisibleBy5Rule(false, Any.InstanceOf<IRule>(), outputBuilder);
 
             rule.Apply(input);
 
-            outputBuilder.Received().Append("FizzBuzz");
+            outputBuilder.Received().Append("Buzz");
         }
 
         [Fact]
-        public void ShouldProduceNothingOnOutputWhenApplyForIntegerNotDivisibleBy15()
+        public void ShouldProduceNothingOnOutputWhenApplyForIntegerNotDivisibleBy5()
         {
-            var input = Any.IntegerNotDivisibleBy(15);
+            var input = Any.IntegerNotDivisibleBy(5);
             var outputBuilder = Substitute.For<IOutputBuilder>();
-            var rule = new DivisibleBy15Rule(outputBuilder);
+            var rule = new DivisibleBy5Rule(false, Any.InstanceOf<IRule>(), outputBuilder);
 
             rule.Apply(input);
 
@@ -34,43 +34,42 @@ namespace FizzBuzzSpecification
         [Fact]
         public void ShouldCallSuccessorWhenApplyIsCalledRuleMatchesAndIsNotBreakable()
         {
-            var input = Any.IntegerDivisibleBy(15);
+            var input = Any.IntegerDivisibleBy(5);
             var outputBuilder = Substitute.For<IOutputBuilder>();
-            var rule = new DivisibleBy15Rule(outputBuilder);
             var successor = Substitute.For<IRule>();
-            rule.ContinueWith(successor);
+            var rule = new DivisibleBy5Rule(false, successor, outputBuilder);
 
             rule.Apply(input);
 
-            outputBuilder.Received().Append("FizzBuzz");
+            outputBuilder.Received().Append("Buzz");
             successor.Received().Apply(input);
         }
 
         [Fact]
         public void ShouldCallSuccessorWhenApplyIsCalledAndRuleDoesNotMatches()
         {
-            var input = Any.IntegerNotDivisibleBy(15);
-            var rule = new DivisibleBy15Rule(Any.InstanceOf<IOutputBuilder>());
+            var input = Any.IntegerNotDivisibleBy(5);
             var successor = Substitute.For<IRule>();
-            rule.ContinueWith(successor);
+            var outputBuilder = Substitute.For<IOutputBuilder>();
+            var rule = new DivisibleBy5Rule(false, successor, outputBuilder);
 
             rule.Apply(input);
 
+            outputBuilder.DidNotReceive().Append(Arg.Any<string>());
             successor.Received().Apply(input);
         }
 
         [Fact]
         public void ShouldNotCallSuccessorWhenApplyIsCalledAndIsBreakable()
         {
-            var input = Any.IntegerDivisibleBy(15);
+            var input = Any.IntegerDivisibleBy(5);
             var outputBuilder = Substitute.For<IOutputBuilder>();
-            var rule = new DivisibleBy15Rule(outputBuilder);
             var successor = Substitute.For<IRule>();
-            rule.ContinueWith(successor).BreakIfApplied();
+            var rule = new DivisibleBy5Rule(true, successor, outputBuilder);
 
             rule.Apply(input);
 
-            outputBuilder.Received().Append("FizzBuzz");
+            outputBuilder.Received().Append("Buzz");
             successor.DidNotReceive().Apply(input);
         }
     }
