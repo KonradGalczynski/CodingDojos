@@ -1,3 +1,5 @@
+using CodingDojos.Rules;
+
 namespace CodingDojos.Builders
 {
     public interface IRuleBuilder

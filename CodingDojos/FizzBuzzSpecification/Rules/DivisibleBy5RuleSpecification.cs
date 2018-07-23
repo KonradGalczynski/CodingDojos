@@ -1,9 +1,10 @@
 ﻿using CodingDojos;
+using CodingDojos.Rules;
 using NSubstitute;
 using TddEbook.TddToolkit;
 using Xunit;
 
-namespace FizzBuzzSpecification
+namespace FizzBuzzSpecification.Rules
 {
     public class DivisibleBy5RuleSpecification
     {

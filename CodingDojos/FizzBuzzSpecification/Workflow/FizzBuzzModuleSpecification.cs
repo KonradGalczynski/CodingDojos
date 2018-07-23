@@ -1,8 +1,9 @@
 ﻿using CodingDojos;
+using CodingDojos.Workflow;
 using FluentAssertions;
 using Xunit;
 
-namespace FizzBuzzSpecification
+namespace FizzBuzzSpecification.Workflow
 {
     public class FizzBuzzWorkflowModuleSpecification
     {

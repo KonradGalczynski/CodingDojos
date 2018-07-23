@@ -1,10 +1,11 @@
 ﻿using System;
-using CodingDojos;
+using CodingDojos.Builders;
+using CodingDojos.Rules;
 using FluentAssertions;
 using TddEbook.TddToolkit;
 using Xunit;
 
-namespace FizzBuzzSpecification
+namespace FizzBuzzSpecification.Builders
 {
     public class DivisibleBy3RuleBuilderSpecification
     {

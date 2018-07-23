@@ -45,15 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DivisibleBy15RuleBuilderSpecification.cs" />
-    <Compile Include="DivisibleBy15RuleSpecification.cs" />
-    <Compile Include="DivisibleBy3RuleBuilderSpecification.cs" />
-    <Compile Include="DivisibleBy3RuleSpecification.cs" />
-    <Compile Include="DivisibleBy5RuleBuilderSpecification.cs" />
-    <Compile Include="DivisibleBy5RuleSpecification.cs" />
-    <Compile Include="FizzBuzzModuleSpecification.cs" />
-    <Compile Include="IntegerRuleBuilderSpecification.cs" />
-    <Compile Include="IntegerRuleSpecification.cs" />
+    <Compile Include="Builders\DivisibleBy15RuleBuilderSpecification.cs" />
+    <Compile Include="Rules\DivisibleBy15RuleSpecification.cs" />
+    <Compile Include="Builders\DivisibleBy3RuleBuilderSpecification.cs" />
+    <Compile Include="Rules\DivisibleBy3RuleSpecification.cs" />
+    <Compile Include="Builders\DivisibleBy5RuleBuilderSpecification.cs" />
+    <Compile Include="Rules\DivisibleBy5RuleSpecification.cs" />
+    <Compile Include="Workflow\FizzBuzzModuleSpecification.cs" />
+    <Compile Include="Builders\IntegerRuleBuilderSpecification.cs" />
+    <Compile Include="Rules\IntegerRuleSpecification.cs" />
     <Compile Include="NullOutputBuilderSpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
