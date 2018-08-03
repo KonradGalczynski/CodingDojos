@@ -58,12 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodingDojos\FizzBuzz.csproj">
-      <Project>{7f9f34e4-b828-42f9-afa7-d01a6c62cd0c}</Project>
-      <Name>FizzBuzz</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="FluentAssertions">
       <Version>5.4.1</Version>
     </PackageReference>
@@ -79,6 +73,12 @@
     <PackageReference Include="xunit.core">
       <Version>2.3.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FizzBuzz\FizzBuzz.csproj">
+      <Project>{7f9f34e4-b828-42f9-afa7-d01a6c62cd0c}</Project>
+      <Name>FizzBuzz</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
