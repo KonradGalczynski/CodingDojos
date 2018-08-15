@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7F9F34E4-B828-42F9-AFA7-D01A6C62CD0C}</ProjectGuid>
+    <ProjectGuid>{4D52D3E1-8341-4397-BA27-43C05444D01D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CodingDojos</RootNamespace>
-    <AssemblyName>CodingDojos</AssemblyName>
+    <RootNamespace>BankOcr</RootNamespace>
+    <AssemblyName>BankOcr</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,24 +36,14 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Rules\DivisibleBy15Rule.cs" />
-    <Compile Include="Builders\DivisibleBy15RuleBuilder.cs" />
-    <Compile Include="Rules\DivisibleBy3Rule.cs" />
-    <Compile Include="Builders\DivisibleBy3RuleBuilder.cs" />
-    <Compile Include="Rules\DivisibleBy5Rule.cs" />
-    <Compile Include="Builders\DivisibleBy5RuleBuilder.cs" />
-    <Compile Include="FizzBuzzMain.cs" />
-    <Compile Include="Workflow\FizzBuzzWorkflowFactory.cs" />
-    <Compile Include="Rules\IntegerRule.cs" />
-    <Compile Include="Builders\IntegerRuleBuilder.cs" />
-    <Compile Include="IOutputBuilder.cs" />
-    <Compile Include="Rules\IRule.cs" />
-    <Compile Include="Builders\IRuleBuilder.cs" />
-    <Compile Include="OutputBuilder.cs" />
+    <Compile Include="FileReader.cs" />
+    <Compile Include="IFileReader.cs" />
+    <Compile Include="IInputFormatter.cs" />
+    <Compile Include="IInputValidator.cs" />
+    <Compile Include="InputFormatter.cs" />
+    <Compile Include="InputValidator.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rules\RuleBase.cs" />
-    <Compile Include="Builders\RuleBuilderBase.cs" />
-    <Compile Include="Workflow\RuleWorkflow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
