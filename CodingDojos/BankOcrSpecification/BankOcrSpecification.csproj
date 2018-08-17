@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="DummySpecification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpers\UseCases.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BankOcr\BankOcr.csproj">
@@ -81,6 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestHelpers\input.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
