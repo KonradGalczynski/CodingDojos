@@ -23,11 +23,16 @@ namespace BankOcr
             var fileReader = new FileReader();
             var inputValidator = new InputValidator();
             var inputFormatter = new InputFormatter();
+            var digitRecognizer = new DigitRecognizer();
+            var bankAccountRecognizer = new BankAccountRecognizer(digitRecognizer);
+            var batchBankAccountRecognizer = new BatchBatchBankAccountRecognizer(bankAccountRecognizer);
 
-            var input = fileReader.Read("input.txt");
+            var input = fileReader.Read(@"C:\Temp\input.txt");
             if (inputValidator.IsValid(input))
             {
                 var formattedInput = inputFormatter.Format(input);
+                var bankAccountNumber = batchBankAccountRecognizer.Recognize(formattedInput);
+                Console.WriteLine(bankAccountNumber);
             }
 
             Console.WriteLine("Hello World!");

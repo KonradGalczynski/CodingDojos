@@ -5,7 +5,7 @@ using FluentAssertions;
 using TddEbook.TddToolkit;
 using Xunit;
 
-namespace BankOcrSpecification
+namespace BankOcrSpecification.UnitSpecification
 {
     public class InputValidatorSpecification
     {

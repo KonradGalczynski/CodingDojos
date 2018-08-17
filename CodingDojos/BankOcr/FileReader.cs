@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace BankOcr
 {
@@ -7,7 +8,7 @@ namespace BankOcr
     {
         public IReadOnlyList<string> Read(string file)
         {
-            throw new NotImplementedException();
+            return File.ReadAllLines(file);
         }
     }
 }

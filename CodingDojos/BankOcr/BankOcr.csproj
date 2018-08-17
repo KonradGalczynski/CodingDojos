@@ -36,7 +36,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankAccountRecognizer.cs" />
+    <Compile Include="BatchBatchBankAccountRecognizer.cs" />
+    <Compile Include="DigitRecognizer.cs" />
     <Compile Include="FileReader.cs" />
+    <Compile Include="IBankAccountRecognizer.cs" />
+    <Compile Include="IBatchBankAccountRecognizer.cs" />
+    <Compile Include="IDigitRecognizer.cs" />
     <Compile Include="IFileReader.cs" />
     <Compile Include="IInputFormatter.cs" />
     <Compile Include="IInputValidator.cs" />
