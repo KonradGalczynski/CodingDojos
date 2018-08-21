@@ -12,7 +12,7 @@
                                         "  |  |  |  |  |  |  |  |  |" + "\n" +
                                         "  |  |  |  |  |  |  |  |  |" + "\n";
 
-        public const string ExpectedOnes = "11111111";
+        public const string ExpectedOnes = "111111111";
 
         public const string GivenTwos = " _  _  _  _  _  _  _  _  _ " + "\n" +
                                         " _| _| _| _| _| _| _| _| _|" + "\n" +
@@ -67,5 +67,11 @@
                                              "  ||_  _|  | _||_|  ||_| _|" + "\n";
 
         public const string ExpectedFullHouse = "123456789";
+
+        public const string GivenJoker =     "    _  _     _  _  _  _  _ " + "\n" +
+                                             "  | _| _||_| _ |_   ||_||_|" + "\n" +
+                                             "  ||_  _|  | _||_|  ||_| _|" + "\n";
+
+        public const string ExpectedQuestionMark = "1234?6789";
     }
 }
