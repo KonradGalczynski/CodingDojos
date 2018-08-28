@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E051F4C-7375-4B2B-996A-178383149F53}</ProjectGuid>
+    <ProjectGuid>{E01915C2-1511-40DC-8028-BF124998B38E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FizzBuzzSpecification</RootNamespace>
-    <AssemblyName>FizzBuzzSpecification</AssemblyName>
+    <RootNamespace>TennisSimplifiedSpecification</RootNamespace>
+    <AssemblyName>TennisSimplifiedSpecification</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -32,30 +33,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NSubstitute">
-      <HintPath>..\..\..\..\Users\kgalczynski\.nuget\packages\nsubstitute\3.1.0\lib\net46\NSubstitute.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\DivisibleBy15RuleBuilderSpecification.cs" />
-    <Compile Include="Rules\DivisibleBy15RuleSpecification.cs" />
-    <Compile Include="Builders\DivisibleBy3RuleBuilderSpecification.cs" />
-    <Compile Include="Rules\DivisibleBy3RuleSpecification.cs" />
-    <Compile Include="Builders\DivisibleBy5RuleBuilderSpecification.cs" />
-    <Compile Include="Rules\DivisibleBy5RuleSpecification.cs" />
-    <Compile Include="Workflow\FizzBuzzModuleSpecification.cs" />
-    <Compile Include="Builders\IntegerRuleBuilderSpecification.cs" />
-    <Compile Include="Rules\IntegerRuleSpecification.cs" />
-    <Compile Include="NullOutputBuilderSpecification.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Core">
+      <Version>4.3.1</Version>
+    </PackageReference>
     <PackageReference Include="FluentAssertions">
       <Version>5.4.1</Version>
+    </PackageReference>
+    <PackageReference Include="NSubstitute">
+      <Version>3.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Threading.Tasks.Extensions">
+      <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
     </PackageReference>
     <PackageReference Include="Tdd-Toolkit">
       <Version>2.0.1</Version>
@@ -69,12 +74,6 @@
     <PackageReference Include="xunit.core">
       <Version>2.4.0</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FizzBuzz\FizzBuzz.csproj">
-      <Project>{7f9f34e4-b828-42f9-afa7-d01a6c62cd0c}</Project>
-      <Name>FizzBuzz</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
