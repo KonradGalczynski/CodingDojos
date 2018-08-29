@@ -37,8 +37,21 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeuceState.cs" />
+    <Compile Include="ITennisMatchCalculator.cs" />
+    <Compile Include="ITennisMatchCalculatorContext.cs" />
+    <Compile Include="ITennisMatchState.cs" />
+    <Compile Include="ITennisMatchStateFactory.cs" />
+    <Compile Include="LoveLoveState.cs" />
+    <Compile Include="NormalScoringState.cs" />
+    <Compile Include="Player1AdvantageState.cs" />
+    <Compile Include="Player1WonState.cs" />
+    <Compile Include="Player2AdvantageState.cs" />
+    <Compile Include="Player2WonState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TennisMatchCalculator.cs" />
+    <Compile Include="TennisMatchStateFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

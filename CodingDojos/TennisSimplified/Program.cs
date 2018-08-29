@@ -10,14 +10,15 @@
     //    points are described as “love”, “fifteen”, “thirty”,
     //    and “forty” respectively.
     // 3. If at least three points have been scored by each player,
-    //   and the scores are equal, the score is “deuce”.
+    //    and the scores are equal, the score is “deuce”.
     // 4. If at least three points have been scored by each side
     //    and a player has one more point than his opponent,
     //    the score of the game is “advantage” for the player
     //    in the lead.
     // 5. After each point is scored result should be returned as string 
-    //    in format " 0 - 0 ", "15 - 0 ", "30 - 40", "Adv    ", " Deuce "
-    //    (length always 7)
+    //    in format "  0 -   0", " 15 -   0", " 30 -  40", "Adv -     ",
+    //    "    - Adv", "  Deuce  ", "Won -     ", "    - Won"
+    //    (length always 9)
     public class Program
     {
         private static void Main(string[] args)
