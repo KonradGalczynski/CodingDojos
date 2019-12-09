@@ -42,9 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SingleFizzBuzzSpec.cs" />
-    <Compile Include="MultiFizzBuzzSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleSpecification.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodingDojos\FizzBuzz.csproj">
